@@ -46,7 +46,7 @@ if st.button("🔄 Atualizar dados"):
 @st.cache_data(ttl=60)
 def carregar_dados():
     df = pd.read_csv(
-        "C:/DEV/Dashboard/DADOS/backup.csv",
+        "backup.csv",
         sep="\t",
         skiprows=6,
         header=None
