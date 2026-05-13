@@ -45,9 +45,8 @@ if st.button("🔄 Atualizar dados"):
 # =========================
 @st.cache_data(ttl=60)
 def carregar_dados():
-    df = pd.read_csv(
-        "C:/DEV/Dashboard/DADOS/backup.csv",
-        sep="\t",
+    df = pd.read_excel(
+        "agenda_backups.xlsx",
         skiprows=6,
         header=None
     )
