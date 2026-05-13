@@ -53,9 +53,12 @@ def carregar_dados():
 
 df_exec, df_agenda = carregar_dados()
 
+st.write("CSV:", df_exec.columns)
+st.write("Excel:", df_agenda.columns)
+
 
 # ✅ CONVERTE INICIO
-df["Inicio"] = pd.to_datetime(df["Inicio"], dayfirst=True, errors="coerce")
+df_exec["Inicio"] = pd.to_datetime(df_exec["Inicio"], dayfirst=True, errors="coerce")
 
 # ✅ CRIA DIA
 df["Dia"] = df["Inicio"].dt.date
