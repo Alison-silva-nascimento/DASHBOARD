@@ -47,8 +47,7 @@ if st.button("🔄 Atualizar dados"):
 def carregar_dados():
     df = pd.read_excel(
         "agenda_backups.xlsx",
-        skiprows=6,
-        header=None
+        
     )
 
     df.columns = [
