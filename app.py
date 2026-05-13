@@ -45,16 +45,14 @@ if st.button("🔄 Atualizar dados"):
 # =========================
 @st.cache_data(ttl=60)
 def carregar_dados():
-    df = pd.read_csv("backup.csv", sep=";", encoding="latin1")
+    df_exec = pd.read_csv("backup.csv", sep=";", encoding="latin1")
+    df_agenda = pd.read_excel("agenda_backups.xlsx")
 
-    st.write("Shape:", df.shape)
-    st.write("Colunas:", df.columns)
-    st.write(df.head())
-
-    return df
+    return df_exec, df_agenda
 
 
-df = carregar_dados()
+df_exec, df_agenda = carregar_dados()
+
 
 # ✅ CONVERTE INICIO
 df["Inicio"] = pd.to_datetime(df["Inicio"], dayfirst=True, errors="coerce")
