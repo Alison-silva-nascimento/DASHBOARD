@@ -45,8 +45,12 @@ if st.button("🔄 Atualizar dados"):
 # =========================
 @st.cache_data(ttl=60)
 def carregar_dados():
-    df = pd.read_excel(
-        "agenda_backups.xlsx",
+    df = pd.read_excel("agenda_backups.xlsx")
+    
+    st.write("Shape:", df.shape)
+    st.write(df.head())
+
+    return df
         
     )
 
